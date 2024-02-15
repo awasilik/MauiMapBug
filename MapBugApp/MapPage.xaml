@@ -5,16 +5,17 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps">
-    <VerticalStackLayout
-        HorizontalOptions="Fill"
-        VerticalOptions="Fill">
+    <Grid>
+        <maps:Map
+            x:Name="Map"
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill"
+            BackgroundColor="Red" />
         <Button
             HorizontalOptions="Center"
+            VerticalOptions="Center"
             Text="Go back"
             Clicked="GoBack" />
-        <maps:Map
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill" />
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>
