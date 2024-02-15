@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Map = Microsoft.Maui.Controls.Maps.Map;
 
 namespace MapBugApp;
 
@@ -10,6 +11,10 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseMauiMaps()
+            .ConfigureMauiHandlers(handlers =>
+            {
+                handlers.AddHandler<Map, CustomMapHandler>();
+            })
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
